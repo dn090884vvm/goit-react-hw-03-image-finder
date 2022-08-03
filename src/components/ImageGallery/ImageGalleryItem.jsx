@@ -1,12 +1,19 @@
-export const ImageGalleryList = ({ picture, onImageClick }) => {
+import React from 'react';
+import './ImageGalleryItem.css';
+
+export const ImageGalleryList = ({
+  picture,
+  tags,
+  largeImage,
+  onOpenImage,
+}) => {
   return (
-    <li className="gallery-item">
+    <li className="ImageGalleryItem">
       <img
-        src={picture.webformatURL}
-        alt=""
-        width="100"
-        height="100"
-        onClick={() => onImageClick(picture.largeImageURL)}
+        className="ImageGalleryItem-image"
+        src={picture}
+        alt={tags}
+        onClick={() => onOpenImage(largeImage)}
       />
     </li>
   );
